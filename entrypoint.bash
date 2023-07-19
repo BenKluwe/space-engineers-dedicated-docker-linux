@@ -46,6 +46,6 @@ cat /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cf
 # sed can't handle multiple lines easily, so everything needs to be on a single line.
 cat /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg | sed -E "$SED_EXPRESSION_FULL" > /tmp/SpaceEngineers-Dedicated.cfg && cat /tmp/SpaceEngineers-Dedicated.cfg > /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg
 
+unuser -l wine bash -c 'steamcmd +force_install_dir /appdata/space-engineers/SpaceEngineersDedicated +@sSteamCmdForcePlatformType windows +login anonymous +app_update 298740 +quit'
 
-runuser -l wine bash -c 'steamcmd +login anonymous +@sSteamCmdForcePlatformType windows +force_install_dir /appdata/space-engineers/SpaceEngineersDedicated +app_update 298740 +quit'
 runuser -l wine bash -c '/entrypoint-space_engineers.bash'
